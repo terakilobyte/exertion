@@ -1,0 +1,51 @@
+.cd-header {
+  transition: transform 0.5s;
+}
+
+.cd-header.nav-is-visible {
+  transform: translateY(80px);
+}
+
+.cd-3d-nav-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  perspective: 1000px;
+  transform: translateY(-100%);
+  transition: transform 0.5s 0s, visibility 0s 0.5s;
+}
+
+.cd-3d-nav-container.nav-is-visible {
+  visibility: visible;
+  transform: translateY(0);
+  transition: transform 0.5s 0s, visibility 0.5s 0s;
+}
+
+main {
+  transition: transform 0.5s;
+}
+
+main.nav-is-visible {
+  transform: translateY(80px);
+}
+
+.cd-marker {
+  background-color: currentColor;
+}
+.cd-marker::before {
+    /* triangle at the bottom of nav selected item */
+    height: 0;
+    width: 0;
+    border: 10px solid transparent;
+    border-bottom-color: inherit; 
+}
+ 
+/* these are the colors of the markers - line + arrow */
+.color-1 {
+  color: #9a57bd; 
+}
+ 
+.color-2 {
+  color: #c96aa4; 
+}

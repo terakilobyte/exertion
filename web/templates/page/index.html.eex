@@ -1,3 +1,3 @@
 <div id="app">
-  
+  <a class="cd-logo" href=""><img alt="the squeeze" src="<%= static_path(@conn, "/images/the-squeeze.jpg") %>"/></a>
 </div>

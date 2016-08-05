@@ -1,0 +1,28 @@
+// colors
+
+@import '../global/_skin.scss';
+
+$body-bg: $lightSalmon; // dark blue
+$nav-container-bg: $deepReach; // black 
+$nav-bg: darken($body-bg, 10%);
+$text-color: #ffffff; // white
+
+$color-1: $middleBlueGreen;
+$color-2: $deepReach; // Hopbush
+$color-3: $paleGoldenrod; // Di Serria
+$color-4: $lightSalmon; // Danube
+$color-5: $paleSilver; // De York
+
+// fonts 
+
+$primary-font: 'Open Sans', sans-serif;
+
+// navigation
+
+$nav-height-S: 80px;
+$nav-height-M: 170px;
+$nav-items: 5;
+
+// animation 
+
+$animation-duration: 0.5s;

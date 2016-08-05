@@ -12,6 +12,40 @@
   </head>
 
   <body>
+    <header class="cd-header">
+      <a href="#0" class="cd-logo">Exertion</a>
+      <a href="#0" class="cd-3d-nav-trigger">Menu<span></span></a>
+    </header> 
+
+    <main>
+      <!-- all your content here -->
+    </main>
+
+    <nav class="cd-3d-nav-container">
+      <ul class="cd-3d-nav">
+        <li>
+          <a href="#0">Post a Project</a>
+        </li>
+        <li>
+          <a href="#1">Browse Projects</a>
+        </li>
+        <li>
+          <a href="#2">What's Hot</a>
+        </li>
+        <li>
+          <a href="#3">About</a>
+        <li>
+          <a href="#4">Account Management</a>
+        </li>
+
+        <!-- other list items here -->
+      </ul>
+
+      <span class="cd-marker color-1"></span>	<!-- marker for the selected navigation item -->
+    </nav>
+    <p class="alert alert-info"> <%= get_flash(@conn, :info) %> </p>
+    <p class="alert alert-error"> <%= get_flash(@conn, :error) %> </p>
+
       <main role="main">
         <%= render @view_module, @view_template, assigns %>
       </main>
