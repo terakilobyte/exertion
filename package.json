@@ -1,0 +1,42 @@
+{
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "deploy": "brunch build --production",
+    "watch": "brunch watch --stdin"
+  },
+  "dependencies": {
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.1.0",
+    "material-ui": "^0.15.3",
+    "phoenix": "file:deps/phoenix",
+    "phoenix_html": "file:deps/phoenix_html",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.1",
+    "react-router-redux": "^4.0.5",
+    "react-tap-event-plugin": "^1.0.0",
+    "redux": "^3.5.2"
+  },
+  "devDependencies": {
+    "babel-brunch": "^6.0.5",
+    "babel-preset-react": "^6.11.1",
+    "brunch": "2.7.4",
+    "clean-css-brunch": "~2.0.0",
+    "css-brunch": "~2.0.0",
+    "eslint": "^3.2.2",
+    "eslint-config-airbnb": "^10.0.0",
+    "eslint-config-standard": "^5.3.5",
+    "eslint-config-standard-jsx": "^2.0.0",
+    "eslint-config-standard-react": "^3.0.0",
+    "eslint-plugin-import": "^1.12.0",
+    "eslint-plugin-jsx-a11y": "^2.0.1",
+    "eslint-plugin-promise": "^2.0.0",
+    "eslint-plugin-react": "^6.0.0",
+    "eslint-plugin-standard": "^2.0.0",
+    "javascript-brunch": "~2.0.0",
+    "sass-brunch": "^2.6.3",
+    "uglify-js-brunch": "~2.0.1"
+  }
+}
