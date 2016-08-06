@@ -1,6 +1,9 @@
 // - - - - - - - - - - - - - - - - - - -
 // - - base
 // project defaults for base elements - h1-h6, p, a, etc.
+@import '../libs/_library-variable-overrides.scss';
+@import 'skin';
+@import 'layout';
 
 
  
@@ -11,9 +14,10 @@ body {
   font-style: normal;
   font-size: 16px;
   line-height: 24px;
-  max-width: 760px;
+  max-width: $max-width;
   padding: 24px;
   margin: 0 auto;
+  background-image: ( linear-gradient(to right, $oliveDrab, darken($oliveDrab, 10%)));
 }
 h1 {
   font-family: inherit;
