@@ -1,5 +1,6 @@
 .cd-header {
   transition: transform 0.5s;
+  background-color: $lightgreen;
 }
 
 .cd-header.nav-is-visible {
@@ -38,14 +39,14 @@ main.nav-is-visible {
     height: 0;
     width: 0;
     border: 10px solid transparent;
-    border-bottom-color: inherit; 
+    border-bottom-color: inherit;
 }
- 
+
 /* these are the colors of the markers - line + arrow */
 .color-1 {
-  color: #9a57bd; 
+  color: #9a57bd;
 }
- 
+
 .color-2 {
-  color: #c96aa4; 
+  color: #c96aa4;
 }
