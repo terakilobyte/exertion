@@ -16,15 +16,23 @@
   </ol>
 </div>
 <div>
-  <ul class="no-bullets">
+  <ul>
     <li>a</li>
     <li>b</li>
     <li>c</li>
   </ul>
 </div>
 <div>
-  <a href="#">test1</a>
-  <a href="#">test2</a>
-  <a href="#">test3</a>
+  <ul class="no-bullets">
+    <li>
+      <a href="#">test1</a>
+    </li>
+    <li>
+      <a href="#">test2</a>
+    </li>
+    <li>
+      <a href="#">test3</a>
+    </li>
+  </ul>
 </div>
 
