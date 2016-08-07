@@ -22,13 +22,16 @@ import {render} from 'react-dom'
 // import socket from "./socket"
 
 import PresentationComponent from './src/components/PresentationCard'
+import Navigation from './src/components/Navigation' //eslint-disable no-unused-vars
 
 class Wrapper extends React.Component {
   render () {
     return (
-      <div className="center-flex-cards">
-        <PresentationComponent content="I'm looking to hire" />
-        <PresentationComponent content="I'm looking to work" />
+      <div>
+        <Navigation />
+        <h3>Make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
+        <PresentationComponent content='Hire' />
+        <PresentationComponent content='Work' />
       </div>
     )
   }

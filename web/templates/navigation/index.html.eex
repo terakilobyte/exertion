@@ -1,4 +1,1 @@
-<div>
-  <h1>Navigation</h1>
-</div>
-<div id="app"></div>
+<div class="center-flex-cards" id="app"></div>
