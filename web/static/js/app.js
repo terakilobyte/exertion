@@ -29,6 +29,7 @@ class Wrapper extends React.Component {
     return (
       <div>
         <Navigation />
+        <h2 className='title'>EXERTION</h2>
         <h3>Make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
         <PresentationComponent content='Hire' />
         <PresentationComponent content='Work' />
