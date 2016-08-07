@@ -10,12 +10,14 @@
  
 html, body {
   margin: 0;
+  height: 100vh;
 }
  
 body {
   margin: 0 auto;
-  background: ( linear-gradient(to left top, lighten($oliveDrab, 10%), $orange));
+  background: $background-gradient;
   background-size: cover;
+  background-repeat: none;
 }
 
 h1 {
