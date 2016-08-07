@@ -2,11 +2,12 @@
 // - - skin
 // global skin styles - gradients, colors, box-shadows, etc.
 
-$oliveDrab: hsla(85%, 68%, 35%, 1);
-$lemon: hsla(52%, 78%, 51%, 1);
-$khaki: hsla(52%, 69%, 75%, 1);
-$brown: hsla(27%, 67%, 18%, 1);
-$rose: hsla(355%, 87%, 66%, 1);
+$oliveDrab: hsla(85, 68%, 35%, 1);
+$lemon: hsla(52, 78%, 51%, 1);
+$khaki: hsla(52, 69%, 75%, 1);
+$brown: hsla(27, 67%, 18%, 1);
+$rose: hsla(355, 87%, 66%, 1);
+$orange: hsla(34, 96%, 63%, 1);
 
 
 $background: lighten($oliveDrab, 37%);

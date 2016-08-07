@@ -13,10 +13,8 @@ html, body {
 }
  
 body {
-  max-width: $max-width;
-  padding: 24px;
   margin: 0 auto;
-  background: ( linear-gradient(to right bottom, lighten($oliveDrab, 30%), lighten($khaki, 0%)));
+  background: ( linear-gradient(to left top, lighten($oliveDrab, 10%), $orange));
   background-size: cover;
 }
 
