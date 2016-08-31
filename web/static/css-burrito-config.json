@@ -9,7 +9,8 @@
       "modulesDirectory": "modules",
       "modulesImportFile": "_modules.scss",
       "moduleFiles": [
-        "_list-styles.scss"
+          "_list-styles.scss",
+          "_normalize.scss"
       ]
     }
   },
