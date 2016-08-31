@@ -1,3 +1,74 @@
 // - - - - - - - - - - - - - - - - - - -
 // - - typography
 // global typography styles
+
+@import url('https://fonts.googleapis.com/css?family=Calligraffitti|Montserrat|Roboto');
+
+$font-headers: 'Roboto';
+$font-content: 'Montserrat';
+$font-logo: 'Calligraffitti';
+
+$primary-text-color: hsla(293, 15%, 20%, 1);
+$secondary-text-color: hsla(0, 0%, 13%, 1);
+
+html, body {
+  font-family: $font-content, "sans-serif";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: $secondary-text-color;
+}
+
+h1 {
+  font-family: $font-headers, "sans-serif";
+  font-weight: 600;
+  font-style: inherit;
+  font-size: 68px;
+  line-height: 72px;
+  color: $primary-text-color;
+}
+
+h2 {
+  font-family: $font-headers, "sans-serif";
+  font-weight: 600;
+  font-style: inherit;
+  font-size: 42px;
+  line-height: 48px;
+  color: $primary-text-color;
+}
+
+h3 {
+  font-family: $font-headers, "sans-serif";
+  font-weight: 600;
+  font-style: inherit;
+  font-size: 26px;
+  line-height: 48px;
+  color: $primary-text-color;
+}
+
+h4 {
+  font-family: $font-headers, "sans-serif";
+  font-weight: 600;
+  font-style: inherit;
+  font-size: 20px;
+  line-height: 24px;
+  color: $primary-text-color, "sans-serif";
+}
+
+h5 {
+  font-family: $font-headers, "sans-serif";
+  font-weight: 400;
+  font-style: italic;
+  font-size: 20px;
+  line-height: 24px;
+  color: $primary-text-color;
+}
+
+p, ul, ol, pre, table, blockquote {
+  font-family: inherit;
+}
+
+b, strong, em, small, code {
+  line-height: 1;
+}

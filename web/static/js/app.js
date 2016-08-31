@@ -11,12 +11,34 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
-import "phoenix_html"
-
+import 'phoenix_html'
+import React from 'react'
+import {render} from 'react-dom'
 // Import local files
 //
 // Local files can be imported directly using relative
 // paths "./socket" or full ones "web/static/js/socket".
 
 // import socket from "./socket"
-alert('webpack compiled me')
+
+import PresentationComponent from './src/components/PresentationCard'
+import Navigation from './src/components/Navigation' //eslint-disable no-unused-vars
+
+class Wrapper extends React.Component {
+  render () {
+    return (
+      <div>
+        <Navigation />
+        <h2 className='title'>EXERTION</h2>
+        <h3>Make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
+        <PresentationComponent content='Hire' />
+        <PresentationComponent content='Work' />
+      </div>
+    )
+  }
+}
+
+render(
+  <Wrapper />,
+  document.getElementById('app')
+)

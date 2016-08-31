@@ -1,3 +1,66 @@
 // - - - - - - - - - - - - - - - - - - -
 // - - base
 // project defaults for base elements - h1-h6, p, a, etc.
+@import '../libs/_library-variable-overrides.scss';
+@import 'skin';
+@import 'layout';
+@import 'typography';
+
+
+ 
+html, body {
+  margin: 0;
+  height: 100%;
+}
+ 
+body {
+  margin: 0 auto;
+ background: $background-gradient;
+}
+
+h1 {
+  margin-top: 24px;
+  margin-bottom: 30px;
+}
+h2 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+h3 {
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+h4 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+h5 {
+  margin-top: 24px;
+  margin-bottom: 14px;
+}
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0px;
+  margin-bottom: 24px;
+}
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+hr {
+  border: 1px solid;
+  margin: -1px 0;
+  color: #bdbdbd;
+}
+
+sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+a {
+  color: $rose;
+}

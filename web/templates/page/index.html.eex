@@ -1,36 +1,39 @@
-<div class="jumbotron">
-  <h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+<div>
+  <h1>Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.</h1>
+ <h2>Phasellus neque orci, porta a, aliquet quis, semper a, massa.   </h2>
+  <h3>Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.   </h3>
+  <h4>Integer placerat tristique nisl.   </h4>
+  <h5>Nunc eleifend leo vitae magna.   </h5>
+  <p>
+    Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+  </p>
+</div>
+<div>
+  <ol>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+  </ol>
+</div>
+<div>
+  <ul>
+    <li>a</li>
+    <li>b</li>
+    <li>c</li>
+  </ul>
+</div>
+<div>
+  <ul class="no-bullets">
+    <li>
+      <a href="#">test1</a>
+    </li>
+    <li>
+      <a href="#">test2</a>
+    </li>
+    <li>
+      <a href="#">test3</a>
+    </li>
+  </ul>
 </div>
 
-<div class="row marketing">
-  <div class="col-lg-6">
-    <h4>Resources</h4>
-    <ul>
-      <li>
-        <a href="http://phoenixframework.org/docs/overview">Guides</a>
-      </li>
-      <li>
-        <a href="https://hexdocs.pm/phoenix">Docs</a>
-      </li>
-      <li>
-        <a href="https://github.com/phoenixframework/phoenix">Source</a>
-      </li>
-    </ul>
-  </div>
 
-  <div class="col-lg-6">
-    <h4>Help</h4>
-    <ul>
-      <li>
-        <a href="http://groups.google.com/group/phoenix-talk">Mailing list</a>
-      </li>
-      <li>
-        <a href="http://webchat.freenode.net/?channels=elixir-lang">#elixir-lang on freenode IRC</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/elixirphoenix">@elixirphoenix</a>
-      </li>
-    </ul>
-  </div>
-</div>
