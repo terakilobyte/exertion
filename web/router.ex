@@ -16,8 +16,7 @@ defmodule Exertion.Router do
   scope "/", Exertion do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
-    get "/navigation", NavigationController, :index
+    get "/", NavigationController, :index
   end
 
   # Other scopes may use custom stacks.
