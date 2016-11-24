@@ -2,16 +2,42 @@ const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const extractSass = new ExtractTextPlugin('css/app.css')
+const webpack = require('webpack')
+const env = process.env.MIX_ENV || 'dev'
+const prod = env || 'dev'
+
+/* new webpack.optimize.OccurenceOrderPlugin(), */
+
+let plugins = [
+  extractSass,
+  new CopyWebpackPlugin([{from: './web/static/assets'}]),
+  new webpack.NoErrorsPlugin(),
+  new webpack.DefinePlugin({
+    __PROD__: prod,
+    __DEV__: env === 'dev'
+  })
+]
+
+if (env === 'dev') {
+  plugins.push(new webpack.HotModuleReplacementPlugin())
+}
+
+const publicPath = 'http://localhost:4001'
+const entry = ['./web/static/css/application.scss', './web/static/js/app.js']
+const hot = 'webpack-hot-middleware/client?path=' + publicPath + '__webpack_hmr'
 
 module.exports = {
-  devtool: 'source-map',
-  entry: ['./web/static/css/application.scss', './web/static/js/app.js'],
+  devtool: prod ? null : 'source-map',
+  entry: prod ? entry : [hot, entry],
   output: {
-    path: './priv/static',
-    filename: 'js/app.js'
+    path: path.resolve(__dirname) + '/priv/static/',
+    filename: 'bundle.js',
+    publicPath: publicPath
   },
   resolve: {
-    moduleDirectories: ['node_modules', path.join(__dirname, '/web/static/js')]
+    moduleDirectories: ['node_modules', path.join(__dirname, '/web/static/js/src')],
+    extensions: ['', '.js'],
+    root: path.join(__dirname, '/web/static/js/src')
   },
   module: {
     loaders: [
@@ -19,9 +45,9 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: ['babel'],
-        include: __dirname,
+        exlude: path.resolve(__dirname, 'node_modules'),
         query: {
-          presets: ['es2015']
+          presets: ['es2015', 'react']
         }
       }, {
         test: /\.scss$/,
@@ -37,8 +63,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    extractSass,
-    new CopyWebpackPlugin([{from: './web/static/assets'}])
-  ]
+  plugins
 }

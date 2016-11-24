@@ -51,56 +51,6 @@
 // - - inbox
 // the inbox allows developers, and those not actively working on the project
 // to quickly add styles that are easily seen by the maintainer of the file.
-.presentationComponent {
-  width: 10vw * $phi;
-  height: 10vw;
-  background-color: hsla(0, 95%, 95%, .33);
-  text-align: center;
-  line-height: 10vw;
-  border-radius: 15px;
-  box-shadow: 3px 3px 14px 0px hsla(0, 0%, 0%, .75);
-  cursor: pointer;
-  margin: 0 5vw;
-  display: inline-block;
-  
-
-  &:hover {
-    background: darken($color: hsla(0, 95%, 95%, .33), $amount: 10%);
-  }
-}
-
-.container {
-  height: 100%;
-  margin: 0 auto;
-}
-
-.squeeze {
-  animation: squeeze 900ms ease-in-out 1000ms forwards;
-
-  @keyframes squeeze {
-    0% {
-      letter-spacing: inherit;
-    }
-    5% {
-      letter-spacing: 0.08em;
-    }
-    50% {
-      letter-spacing: -0.5em;
-    }
-    70% {
-      letter-spacing: 0.15em;
-    }
-    100% {
-      letter-spacing: inherit;
-    }
-  }
-}
-
-.title {
-  font-family: $font-headers, cursive;
-  letter-spacing: .2em;
-}
-
 .nav {
   width: 70vw;
   height: 75px;

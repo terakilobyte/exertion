@@ -1,8 +1,8 @@
 import React from 'react'
 const PresentationComponent = (props) => {
   return (
-    <div className="presentationComponent">
-    <p>{props.content}</p>
+    <div className='presentationComponent'>
+      <p>{props.content}</p>
     </div>
   )
 }

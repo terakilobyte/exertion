@@ -13,32 +13,71 @@
 // to also remove its path from "config.paths.watched".
 import 'phoenix_html'
 import React from 'react'
-import {render} from 'react-dom'
-// Import local files
-//
-// Local files can be imported directly using relative
-// paths "./socket" or full ones "web/static/js/socket".
+import ReactDOM from 'react-dom'
+import createStore from './src/store'
+import AppContainer from './src/containers/AppContainer'
 
-// import socket from "./socket"
+// ========================================================
+// Store Instantiation
+// ========================================================
+const initialState = window.___INITIAL_STATE__
+const store = createStore(initialState)
 
-import PresentationComponent from './src/components/PresentationCard'
-import Navigation from './src/components/Navigation' //eslint-disable no-unused-vars
+// ========================================================
+// Render Setup
+// ========================================================
+const MOUNT_NODE = document.getElementById('app')
 
-class Wrapper extends React.Component {
-  render () {
-    return (
-      <div>
-        <Navigation />
-        <h2 className='title'>EXERTION</h2>
-        <h3>Make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
-        <PresentationComponent content='Hire' />
-        <PresentationComponent content='Work' />
-      </div>
+let render = () => {
+  const routes = require('./src/routes/index').default(store)
+
+  ReactDOM.render(
+    <AppContainer store={store} routes={routes} />,
+    MOUNT_NODE
+  )
+}
+
+// ========================================================
+// Developer Tools Setup
+// ========================================================
+
+/* if (__DEV__) {
+ *   if (window.devToolsExtension) {
+ *     window.devToolsExtension.open()
+ *   }
+ * } */
+
+// This code is excluded from production bundle
+if (__DEV__) {
+  if (module.hot) {
+    // Development render functions
+    const renderApp = render
+    const renderError = (error) => {
+      const RedBox = require('redbox-react').default
+
+      ReactDOM.render(<RedBox error={error} />, MOUNT_NODE)
+    }
+
+    // Wrap render in try/catch
+    render = () => {
+      try {
+        renderApp()
+      } catch (error) {
+        renderError(error)
+      }
+    }
+
+    // Setup hot module replacement
+    module.hot.accept('./src/routes/index', () =>
+      setImmediate(() => {
+        ReactDOM.unmountComponentAtNode(MOUNT_NODE)
+        render()
+      })
     )
   }
 }
 
-render(
-  <Wrapper />,
-  document.getElementById('app')
-)
+// ========================================================
+// Go!
+// ========================================================
+render()

@@ -11,14 +11,14 @@ config :exertion, Exertion.Endpoint,
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
-  watchers: [npm: ["start", cd: Path.expand("../", __DIR__)]]
+  watchers: [node: ["webpack.dev.js", cd: "."]]
 
 
 # Watch static and templates for browser reloading.
 config :exertion, Exertion.Endpoint,
   live_reload: [
     patterns: [
-      ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
+      # ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
       ~r{web/views/.*(ex)$},
       ~r{web/templates/.*(eex)$}
