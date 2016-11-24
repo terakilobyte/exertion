@@ -6,38 +6,29 @@ const webpack = require('webpack')
 const env = process.env.MIX_ENV || 'dev'
 const prod = env || 'dev'
 
-/* new webpack.optimize.OccurenceOrderPlugin(), */
-
 let plugins = [
   extractSass,
   new CopyWebpackPlugin([{from: './web/static/assets'}]),
   new webpack.NoErrorsPlugin(),
+  new webpack.optimize.OccurenceOrderPlugin(),
   new webpack.DefinePlugin({
     __PROD__: prod,
     __DEV__: env === 'dev'
   })
 ]
 
-if (env === 'dev') {
-  plugins.push(new webpack.HotModuleReplacementPlugin())
-}
-
-const publicPath = 'http://localhost:4001'
 const entry = ['./web/static/css/application.scss', './web/static/js/app.js']
-const hot = 'webpack-hot-middleware/client?path=' + publicPath + '__webpack_hmr'
 
 module.exports = {
-  devtool: prod ? null : 'source-map',
-  entry: prod ? entry : [hot, entry],
+  devtool: 'source-map',
+  entry: entry,
   output: {
     path: path.resolve(__dirname) + '/priv/static/',
-    filename: 'bundle.js',
-    publicPath: publicPath
+    filename: 'js/app.js'
   },
   resolve: {
     moduleDirectories: ['node_modules', path.join(__dirname, '/web/static/js/src')],
-    extensions: ['', '.js'],
-    root: path.join(__dirname, '/web/static/js/src')
+    extensions: ['', '.js']
   },
   module: {
     loaders: [

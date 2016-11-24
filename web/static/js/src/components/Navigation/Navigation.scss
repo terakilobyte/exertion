@@ -1,0 +1,32 @@
+.nav {
+  width: 70vw;
+  height: 75px;
+  position: fixed;
+  top: 0px;
+  z-index: 1;
+  margin-bottom: 1vw;
+  & > ul {
+    height: inherit;
+    list-style: none;
+    line-height: 110px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0px;
+
+    & > li  {
+      justify-content: center;
+      padding: 0 10px;
+      cursor: pointer;
+      transition: all 400ms ease-in-out;
+      width: 85px;
+      color: white;
+      font-weight: bolder;
+
+      &:hover {
+        background: darken($color: hsla(0, 95%, 95%, .33), $amount: 10%);
+        color: black;
+        font-weight: bolder;
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 import React from 'react'
-import Navigation from '../../components/Navigation.js'
+import Navigation from '../../components/Navigation/Navigation.js'
 import './CoreLayout.scss'
 
 export const CoreLayout = ({ children }) => (
-  <div className='container text-center'>
+  <div>
     <Navigation />
-    <div className='core-layout__viewport'>
+    <div className='center-flex'>
       {children}
     </div>
   </div>

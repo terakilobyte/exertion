@@ -17,10 +17,6 @@
     <div class="container">
         <%= render @view_module, @view_template, assigns %>
     </div> <!-- /container -->
-    <%= if Mix.env == :dev do %>
-      <script src="http://localhost:4001/bundle.js"></script>
-    <% else %>
-      <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-    <% end %>
+    <script type="text/javascript" src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

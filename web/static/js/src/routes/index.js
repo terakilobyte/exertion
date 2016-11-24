@@ -4,14 +4,18 @@ import CoreLayout from '../layouts/CoreLayout'
 /*  Note: Instead of using JSX, we recommend using react-router
    PlainRoute objects to build route definitions.   */
 
-export const createRoutes = (store) => ({
-  path: '/',
-  component: CoreLayout,
-  children: [
-    require('./Home').default
-  ],
-  indexRoute: Home,
-})
+export const createRoutes = (store) => {
+  console.log('in routing')
+  return ({
+    path: '/',
+    component: CoreLayout,
+    indexRoute: Home,
+    childRoutes: [
+      require('./Hire').default,
+      require('./NotFound').default
+    ]
+  })
+}
 
 /*  Note: childRoutes can be chunked or otherwise loaded programmatically
    using getChildRoutes with the following signature:

@@ -1,26 +1,7 @@
-$phi: 1.6180339887498948482;
 $font-headers: 'Roboto';
 
-.presentationComponent {
-  width: 10vw * $phi;
-  height: 10vw;
-  background-color: hsla(0, 95%, 95%, .33);
-  text-align: center;
-  line-height: 10vw;
-  border-radius: 15px;
-  box-shadow: 3px 3px 14px 0px hsla(0, 0%, 0%, .75);
-  cursor: pointer;
-  margin: 0 5vw;
-  display: inline-block;
-
-  &:hover {
-    background: darken($color: hsla(0, 95%, 95%, .33), $amount: 10%);
-  }
-}
-
-.container {
-  height: 100%;
-  margin: 0 auto;
+.center-home {
+  margin: 35vh auto;
 }
 
 .squeeze {
@@ -43,9 +24,4 @@ $font-headers: 'Roboto';
       letter-spacing: inherit;
     }
   }
-}
-
-.title {
-  font-family: $font-headers, cursive;
-  letter-spacing: .2em;
 }

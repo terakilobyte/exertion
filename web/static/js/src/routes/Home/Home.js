@@ -3,9 +3,11 @@ import PresentationCard from '../../components/PresentationCard'
 import './Home.scss'
 
 const Home = (props) => (
-  <div>
+  <div className='center-home'>
     <h3>Make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
-    <PresentationCard content='Hire' />
+    <a href='hire'>
+      <PresentationCard content='Hire' />
+    </a>
     <PresentationCard content='Work' />
   </div>
 )
