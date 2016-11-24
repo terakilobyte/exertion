@@ -5,7 +5,7 @@ import './Home.scss'
 const Home = (props) => (
   <div className='center-home'>
     <h3>Make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
-    <a href='hire'>
+    <a className='presentation-link' href='hire'>
       <PresentationCard content='Hire' />
     </a>
     <PresentationCard content='Work' />
