@@ -4,15 +4,16 @@ import './Navigation.scss'
 const Navigation = () => {
   return (
     <div className='nav'>
-      <ul className="brand">
-        <li>Exertion</li>
+      <ul className='left'>
+        <li>
+          <h1>
+            Exertion
+          </h1>
+        </li>
       </ul>
-      <ul className='elements'>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li>About</li>
-        <li>Account</li>
+      <ul className='right'>
+        <li className='hover-effect'>About</li>
+        <li className='hover-effect'>Account</li>
       </ul>
     </div>
   )

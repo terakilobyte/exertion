@@ -1,20 +1,27 @@
 .nav {
-  width: 70vw;
   height: 75px;
+  width: 100vw;
   position: fixed;
-  top: 0px;
   z-index: 1;
   margin-bottom: 1vw;
+  display: inline-flex;
+
   & > ul {
     height: inherit;
     list-style: none;
     line-height: 110px;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 0px;
+    width: 45%;
 
-    & > li  {
-      justify-content: center;
+    & > .right {
+      justify-content: flex-end;
+    }
+
+    & > .left {
+      justify-content: flex-start;
+    }
+
+    & > li.hover-effect {
       padding: 0 10px;
       cursor: pointer;
       transition: all 400ms ease-in-out;
@@ -28,5 +35,10 @@
         font-weight: bolder;
       }
     }
-  }
+
+      & > h1 {
+        color: lighten($color: black, $amount: 10%);
+        width: 150px;
+      }
+    }
 }
