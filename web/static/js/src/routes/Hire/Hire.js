@@ -3,9 +3,10 @@
  */
 
 import React from 'react'
+import './Hire.scss'
 
 export const Hire = (props) => (
-  <div className='center-home'>
+  <div className='test'>
     <h1>Hire me</h1>
   </div>
 )

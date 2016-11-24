@@ -28,6 +28,16 @@ const store = createStore(initialState)
 // ========================================================
 const MOUNT_NODE = document.getElementById('app')
 
+// ========================================================
+// Context Setup
+// ========================================================
+const context = {
+  insertCss: (...styles) => {
+    styles.map(x => x._insertCss())
+    return () => { removeCss.forEach(f => f()) }
+  }
+}
+
 let render = () => {
   const routes = require('./src/routes').default(store)
 
