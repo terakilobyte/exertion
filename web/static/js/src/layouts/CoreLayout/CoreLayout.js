@@ -1,5 +1,5 @@
 import React from 'react'
-import Navigation from '../../components/Navigation/Navigation.js'
+import Navigation from '../../components/Navigation'
 import './CoreLayout.scss'
 
 export const CoreLayout = ({ children }) => (

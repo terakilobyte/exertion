@@ -12,4 +12,6 @@ const Home = (props) => (
   </div>
 )
 
+Home.displayName = 'Home'
+
 export default Home
