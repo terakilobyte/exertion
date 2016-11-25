@@ -7,12 +7,12 @@
 @import 'typography';
 
 
- 
+
 html, body {
   margin: 0;
   height: 100%;
 }
- 
+
 body {
   margin: 0 auto;
  background: $background-gradient;
@@ -63,4 +63,5 @@ sub {
 }
 a {
   color: $rose;
+  text-decoration: none;
 }

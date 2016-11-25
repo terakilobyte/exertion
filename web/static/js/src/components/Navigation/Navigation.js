@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 import './Navigation.scss'
 
 const Navigation = () => {
@@ -7,7 +8,9 @@ const Navigation = () => {
       <ul className='left'>
         <li>
           <h1>
-            Exertion
+            <Link to='/'>
+              Exertion
+            </Link>
           </h1>
         </li>
       </ul>
