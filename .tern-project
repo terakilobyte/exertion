@@ -1,0 +1,13 @@
+{
+"libs" : [
+  "browser",
+  "react"
+  ],
+  "loadEagerly": [ "src/*.js", "*.js"],
+  "plugins": {
+    "commonjs": {},
+    "node": {},
+    "requirejs": {},
+    "node_resolve":{}
+  }
+}
