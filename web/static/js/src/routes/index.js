@@ -5,13 +5,14 @@ import CoreLayout from '../layouts/CoreLayout'
    PlainRoute objects to build route definitions.   */
 
 export const createRoutes = (store) => {
-  console.log('in routing')
   return ({
     path: '/',
     component: CoreLayout,
     indexRoute: Home,
     childRoutes: [
       require('./Hire').default,
+      require('./Counter').default(store),
+      require('./TicTacToe').default(store),
       require('./NotFound').default
     ]
   })

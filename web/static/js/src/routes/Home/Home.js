@@ -5,12 +5,12 @@ import './Home.scss'
 
 const Home = (props) => (
   <div className='center-home'>
-    <h3>Make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
-    <Link className='presentation-link' to='hire'>
-      <PresentationCard content='Hire' />
+    <h3>Trying to make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
+    <Link className='presentation-link' to='tictactoe'>
+      <PresentationCard content='Tic-Tac-Toe' />
     </Link>
-    <Link className='presentation-link' to='poop'>
-      <PresentationCard content='Work' />
+    <Link className='presentation-link' to='counter'>
+      <PresentationCard content='Counter' />
     </Link>
   </div>
 )

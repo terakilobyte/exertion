@@ -22,6 +22,7 @@ import AppContainer from './src/containers/AppContainer'
 // ========================================================
 const initialState = window.___INITIAL_STATE__
 const store = createStore(initialState)
+console.log('app store', store.getState())
 
 // ========================================================
 // Render Setup

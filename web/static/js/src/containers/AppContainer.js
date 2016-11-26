@@ -10,7 +10,6 @@ class AppContainer extends Component {
 
   render () {
     const { routes, store } = this.props
-    console.log(this.props)
 
     return (
       <Provider store={store}>

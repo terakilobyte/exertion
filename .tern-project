@@ -1,13 +1,26 @@
 {
-"libs" : [
-  "browser",
-  "react"
+  "ecmaVersion": 6,
+  "libs": [
+    "browser",
+    "Rx",
+    "redux-observable"
   ],
-  "loadEagerly": [ "src/*.js", "*.js"],
+  "loadEagerly": [
+    "./node_modules/redux-observable/dist/redux-observable.js"
+  ],
   "plugins": {
-    "commonjs": {},
-    "node": {},
-    "requirejs": {},
-    "node_resolve":{}
+    "node": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
+    "node_resolve": {},
+    "es_modules": {},
+    "requirejs": {
+      "baseURL": "",
+      "paths": "",
+      "override": ""
+    },
+    "commonjs": {}
   }
 }
