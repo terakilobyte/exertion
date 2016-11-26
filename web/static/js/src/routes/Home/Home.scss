@@ -5,7 +5,7 @@ $font-headers: 'Roboto';
 }
 
 .squeeze {
-  animation: squeeze 600ms ease-in-out forwards;
+  animation: squeeze 600ms ease-in-out 1000ms forwards;
 
   @keyframes squeeze {
     0% {

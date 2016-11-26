@@ -9,6 +9,45 @@ $brown: hsla(27, 67%, 18%, 1);
 $rose: hsla(355, 87%, 66%, 1);
 $orange: hsla(34, 96%, 63%, 1);
 $lightbrown: hsla(27, 67%, 78%, .30);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+$shadow: hsla(0, 0, 0, .4);
+
+$titanwhite: hsl(252, 30, 87);
+$darksalmon: hsl(9, 70, 71);
+$graysuit: hsl(255, 8, 60);
+$navyblue: hsl(213, 73, 49);
+$darkjunglegreen: hsl(151, 25, 11);
+
+$background-gradient: linear-gradient(to left top, lighten($oliveDrab, 10%), $orange);
 
 
-$background-gradient: linear-gradient(to left top, lighten($oliveDrab, 10%), $orange)
+
+$background: $titanwhite;
+$textColor: $darkjunglegreen;
+$fontFamily: 'Roboto', Arial, sans-serif;
+
+// Extensions
+$titanLight: lighten($titanwhite, 5%);
+$titanBright: lighten($titanwhite, 10%);
+$titanDark: darken($titanwhite, 10%);
+$navyLight: lighten($navyblue, 10%);
+$navyDark: darken($navyblue, 10%);
+
+// Navigation
+$navigationBackground: $navyblue;
+$navigationHover: $navyLight;
+$navigationLink: $titanLight;
+$navigationLinkHover: $titanwhite;
+
+// ProjectWell
+$wellBackground: $titanDark;
+$wellHover: $titanwhite;
+$wellBoxShadow: $shadow;
+
+// Tic-Tac-Toe
+$tileHover: $titanLight;
+$tileClick: $titanBright;
+
+
+/* New Palette */

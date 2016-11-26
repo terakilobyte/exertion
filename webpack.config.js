@@ -6,6 +6,8 @@ const webpack = require('webpack')
 const env = process.env.MIX_ENV || 'dev'
 const prod = env || 'dev'
 
+process.env['SASS_PATH'] = path.resolve(__dirname) + 'web/static/css'
+
 let plugins = [
   extractSass,
   new CopyWebpackPlugin([{from: './web/static/assets'}]),
@@ -42,7 +44,7 @@ module.exports = {
         }
       }, {
         test: /\.scss$/,
-        loader: extractSass.extract(['css', 'sass']),
+        loader: extractSass.extract(['css', 'sass'])
       }, {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'
       }, {
@@ -53,6 +55,9 @@ module.exports = {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'
       }
     ]
+  },
+  sassLoader: {
+    includePaths: [path.resolve(__dirname) + '/web/static/css']
   },
   plugins
 }
