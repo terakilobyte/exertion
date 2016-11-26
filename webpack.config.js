@@ -7,7 +7,7 @@ const env = process.env.MIX_ENV || 'dev'
 const prod = env || 'dev'
 
 process.env['SASS_PATH'] = path.resolve(__dirname) + 'web/static/css'
-
+console.log('we are in ' + prod + 'mode')
 let plugins = [
   extractSass,
   new CopyWebpackPlugin([{from: './web/static/assets'}]),
@@ -19,14 +19,25 @@ let plugins = [
   })
 ]
 
+const publicPath = 'http://localhost:4001/'
 const entry = ['./web/static/css/application.scss', './web/static/js/app.js']
+const hot = 'webpack-hot-middleware/client?path=' + publicPath + '__webpack_hmr'
+if (prod === 'dev') {
+  entry.unshift(hot)
+}
+
+if (env === 'dev') {
+  console.log('webpack building in dev mode')
+  plugins.push(new webpack.HotModuleReplacementPlugin())
+}
 
 module.exports = {
-  devtool: 'source-map',
+  devtool: prod !== 'dev' ? null : 'source-map',
   entry: entry,
   output: {
-    path: path.resolve(__dirname) + '/priv/static/',
-    filename: 'js/app.js'
+    path: path.resolve(__dirname) + '/priv/static/js',
+    filename: 'app.js',
+    publicPath: publicPath
   },
   resolve: {
     moduleDirectories: ['node_modules', path.join(__dirname, '/web/static/js/src')],
@@ -37,11 +48,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: ['babel'],
-        exlude: path.resolve(__dirname, 'node_modules'),
-        query: {
-          presets: ['es2015', 'react']
-        }
+        loaders: ['babel'],
+        exlude: /node_modules/,
+        include: path.join(__dirname, 'web/static/js/')
       }, {
         test: /\.scss$/,
         loader: extractSass.extract(['css', 'sass'])

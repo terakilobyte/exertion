@@ -12,11 +12,11 @@
   </head>
 
   <body>
-    <div class="nav" id="navigation">
-    </div>
-    <div class="container">
-        <%= render @view_module, @view_template, assigns %>
-    </div> <!-- /container -->
-    <script type="text/javascript" src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <%= render @view_module, @view_template, assigns %>
+    <%= if Mix.env == :dev do %>
+      <script src='http://localhost:4001/app.js'></script>
+    <% else %>
+      <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+    <% end %>
   </body>
 </html>

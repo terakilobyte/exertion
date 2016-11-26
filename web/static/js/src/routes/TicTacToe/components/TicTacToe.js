@@ -1,10 +1,11 @@
 import React from 'react'
 import '../styles/TicTacToe.scss'
 import { connect } from 'react-redux'
-import actions from '../modules'
+import { actions } from '../modules'
 
 import GameBoard from '../components/GameBoard'
-import { throttle } from 'lodash'
+
+import throttle from 'lodash.throttle'
 
 class TicTacToe extends React.Component {
   constructor (props) {
@@ -15,8 +16,9 @@ class TicTacToe extends React.Component {
     }
     this.handleReset = this.handleReset.bind(this)
     this.firstReset = this.firstReset.bind(this)
-    this.handleUserClickThrottled = throttle(this.handleUserClick.bind(this), 5000)
+    this.handleUserClickThrottled = throttle(this.handleUserClick, 5000)
     this.throttledComputerMove = throttle(this.computerMove, 5000)
+    this.handleUserClick = this.handleUserClick.bind(this)
   }
 
   componentWillReceiveProps (propObj) {
@@ -105,7 +107,7 @@ class TicTacToe extends React.Component {
           <h3 className='text-center'>You can't win</h3>
           <hr />
           <GameBoard key={this.state.gameKey}
-            tileClick={this.handleUserClickThrottled} />
+            tileClick={this.handleUserClick} />
           <hr />
           {notifier}
         </div>
@@ -116,12 +118,12 @@ class TicTacToe extends React.Component {
 
 TicTacToe.propTypes = {
   playerTurn: React.PropTypes.bool,
-  computerMove: React.PropTypes.func,
+  computerMove: React.PropTypes.func.isRequired,
   winner: React.PropTypes.bool,
-  resetGame: React.PropTypes.func,
-  playerMove: React.PropTypes.func,
+  resetGame: React.PropTypes.func.isRequired,
+  playerMove: React.PropTypes.func.isRequired,
   playerSigil: React.PropTypes.string,
-  init: React.PropTypes.func
+  init: React.PropTypes.func.isRequired
 }
 
 const mapStateToProps = (state) => {

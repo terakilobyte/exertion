@@ -9,11 +9,17 @@ export const GameRow = (props) => {
     2: 'bottom'
   }
 
+  const columns = {
+    0: 'Left',
+    1: 'Middle',
+    2: 'Right'
+  }
+
   const tiles = Object.keys(rows).map((key, idx) => {
     return (
-      <GameTile column={key}
+      <GameTile column={columns[key]}
         key={key}
-        row={rows[key]}
+        row={rows[props.row]}
         tileClick={props.tileClick} />
     )
   })
@@ -26,7 +32,8 @@ export const GameRow = (props) => {
 }
 
 GameRow.propTypes = {
-  tileClick: React.PropTypes.func.isRequired
+  tileClick: React.PropTypes.func.isRequired,
+  row: React.PropTypes.string.isRequired
 }
 
 export default GameRow

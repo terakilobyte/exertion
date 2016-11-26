@@ -1,4 +1,4 @@
-const minimax = (function () {
+const miniMax = (function () {
   const winningPositions = [
     '012', '036', '048', '147', '258', '345', '678', '246'
   ]
@@ -122,7 +122,7 @@ const minimax = (function () {
     return boardToArray(board)
   }
 
-  mini.minimax = function (board,
+  mini.miniMax = function (board,
                            depth,
                            player,
                            alpha = -Infinity,
@@ -139,7 +139,7 @@ const minimax = (function () {
     if (player === 'O') {
       best = -Infinity
       for (let i = 0; i < children.length; i++) {
-        let possible = mini.minimax(children[i],
+        let possible = mini.miniMax(children[i],
                                     depth + 1,
                                     nextPlayer,
                                     alpha,
@@ -158,7 +158,7 @@ const minimax = (function () {
     } else {
       best = Infinity
       for (let i = 0; i < children.length; i++) {
-        let possible = mini.minimax(children[i],
+        let possible = mini.miniMax(children[i],
                                     depth + 1,
                                     nextPlayer,
                                     alpha,
@@ -181,4 +181,4 @@ const minimax = (function () {
   return mini
 })()
 
-export default minimax
+export default miniMax

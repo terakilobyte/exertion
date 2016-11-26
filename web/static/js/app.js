@@ -22,7 +22,6 @@ import AppContainer from './src/containers/AppContainer'
 // ========================================================
 const initialState = window.___INITIAL_STATE__
 const store = createStore(initialState)
-console.log('app store', store.getState())
 
 // ========================================================
 // Render Setup
@@ -37,22 +36,35 @@ let render = () => {
     MOUNT_NODE
   )
 }
-
+// This code is excluded from production bundle
 if (__DEV__) {
-  const renderApp = render
-  const renderError = (error) => {
-    const RedBox = require('redbox-react').default
-    ReactDOM.render(<RedBox error={error} />, MOUNT_NODE)
-  }
-  render = () => {
-    try {
-      renderApp()
-    } catch (error) {
-      renderError(error)
+  if (module.hot) {
+    // Development render functions
+    const renderApp = render
+    const renderError = (error) => {
+      const RedBox = require('redbox-react').default
+
+      ReactDOM.render(<RedBox error={error} />, MOUNT_NODE)
     }
+
+    // Wrap render in try/catch
+    render = () => {
+      try {
+        renderApp()
+      } catch (error) {
+        renderError(error)
+      }
+    }
+
+    // Setup hot module replacement
+    module.hot.accept('./src/routes/index', () =>
+      setImmediate(() => {
+        ReactDOM.unmountComponentAtNode(MOUNT_NODE)
+        render()
+      })
+    )
   }
 }
-
 // ========================================================
 // Developer Tools Setup
 // ========================================================

@@ -17,12 +17,6 @@ const tileMap = {
   'bottomRight': 9
 }
 
-const columns = {
-  0: 'Left',
-  1: 'Middle',
-  2: 'Right'
-}
-
 const classes = {
   'O': 'nought',
   'X': 'cross'
@@ -32,9 +26,8 @@ export class GameTile extends React.Component {
 
   constructor (props) {
     super(props)
-    console.log('props', props)
     this.state = {
-      tile: `${props.row}${columns[props.column]}`
+      tile: `${props.row}${props.column}`
     }
     this.handleClick = this.handleClick.bind(this)
   }
@@ -109,8 +102,8 @@ GameTile.propTypes = {
   column: React.PropTypes.string.isRequired,
   playerMove: React.PropTypes.func.isRequired,
   gameBoard: React.PropTypes.array.isRequired,
+  tileClick: React.PropTypes.func.isRequired,
   playerTurn: React.PropTypes.bool,
-  tileClick: React.PropTypes.func,
   playerSigil: React.PropTypes.string,
   computerSigil: React.PropTypes.string
 }

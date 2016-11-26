@@ -1,54 +1,20 @@
 import React from 'react'
-import GameTile from './GameTile'
 import '../styles/TicTacToe.scss'
+import GameRow from './GameRow'
 
 const GameBoard = (props) => {
-  // ======================================================
-  // Board Constants
-  // ======================================================
-  const rows = {
-    0: 'top',
-    1: 'center',
-    2: 'bottom'
-  }
-
-  const columns = {
-    0: 'Left',
-    1: 'Middle',
-    2: 'Right'
-  }
 
   // ======================================================
-  // GameRow
+  // Grid
   // ======================================================
-
-  const GameRow = () => {
-    const tiles = Object.keys(rows).map((key, idx) => {
-      return (
-        <GameTile column={key}
-          key={key}
-          row={rows[key]}
-          tileClick={props.tileClick} />
-      )
-    })
-
-    return (
-      <div className='game-row'>
-        {tiles}
-      </div>
-    )
-  }
-
-  const gameColumns = Object.keys(columns).map(elem => {
-    return (
-      <GameRow key={elem}
-        row={elem} />
-    )
-  })
-
+  const grid = Object.keys([0, 1, 2]).map(rowKey => (
+    <GameRow key={rowKey}
+             row={rowKey}
+             tileClick={props.tileClick} />
+  ))
   return (
     <div className='game-board'>
-      {gameColumns}
+      {grid}
     </div>
   )
 }

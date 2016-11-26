@@ -25,4 +25,5 @@ erl_crash.dump
 Rx.json
 redux-observable.json
 .tern-project
-  
+index.debug.html
+npm-debug.log
