@@ -67,5 +67,8 @@ export const reducer = (state = initialState, action) => {
       newState.playerTurn = newState.playerSigil === 'X'
       newState.computerSigil = newState.playerSigil === 'X' ? 'O' : 'X'
       return newState
+
+    default:
+      return state
   }
 }

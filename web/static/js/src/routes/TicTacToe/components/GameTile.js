@@ -17,12 +17,6 @@ const tileMap = {
   'bottomRight': 9
 }
 
-const rows = {
-  0: 'top',
-  1: 'center',
-  2: 'bottom'
-}
-
 const columns = {
   0: 'Left',
   1: 'Middle',
@@ -34,12 +28,13 @@ const classes = {
   'X': 'cross'
 }
 
-class GameTile extends React.Component {
+export class GameTile extends React.Component {
 
   constructor (props) {
     super(props)
+    console.log('props', props)
     this.state = {
-      tile: `${props.row}${columns[props.columns]}`
+      tile: `${props.row}${columns[props.column]}`
     }
     this.handleClick = this.handleClick.bind(this)
   }
@@ -77,4 +72,47 @@ class GameTile extends React.Component {
     let tile = this.refs.tile
     tile.classList.remove('active')
   }
+
+  handleClick () {
+    console.log(`clicked ${this.state.tile}`)
+    const clickThis = () => {
+      let tile = this.refs.input
+      this.disable()
+      tile.classList.add(classes[this.props.playerSigil])
+      this.props.playerMove(clickThis.bind(this))
+    }
+    this.props.tileClick(clickThis.bind(this))
+  }
+
+  render () {
+    return (
+      <div className='game-tile active' ref='tile'>
+        <input id={this.state.tile}
+          onClick={this.handleClick}
+          ref='input'
+          type='checkbox' />
+      </div>
+    )
+  }
 }
+
+const mapStateToProps = (state) => ({
+  gameBoard: state.tictactoe.board,
+  winner: state.tictactoe.winner,
+  playerTurn: state.tictactoe.playerTurn,
+  playerSigil: state.tictactoe.playerSigil,
+  computerSigil: state.tictactoe.computerSigil
+})
+
+GameTile.propTypes = {
+  row: React.PropTypes.string.isRequired,
+  column: React.PropTypes.string.isRequired,
+  playerMove: React.PropTypes.func.isRequired,
+  gameBoard: React.PropTypes.array.isRequired,
+  playerTurn: React.PropTypes.bool,
+  tileClick: React.PropTypes.func,
+  playerSigil: React.PropTypes.string,
+  computerSigil: React.PropTypes.string
+}
+
+export default connect(mapStateToProps, actions)(GameTile)
