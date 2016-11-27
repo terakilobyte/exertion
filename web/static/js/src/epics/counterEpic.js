@@ -11,7 +11,7 @@ const addEpic = action$ =>
 
 const subEpic = action$ =>
   action$.ofType(ASYNCSUB)
-         .delay(10000)
+         .delay(1000)
          .mapTo({type: SUB})
 
 export default combineEpics(addEpic, subEpic)
