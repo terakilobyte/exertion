@@ -2,7 +2,6 @@
 /* Icons */
 
 .cross:before, .nought:before {
-    display: block;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -10,6 +9,7 @@
     line-height: 50px;
     animation: shake .1s,
     explode .05s;
+    cursor: pointer;
 }
 
 .cross:before {
@@ -58,6 +58,8 @@ input[type='checkbox'] {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
+    margin: 2vw 5vw;
 }
 
 .game-row {
@@ -100,14 +102,16 @@ input[type='checkbox'] {
     }
 }
 
+ 
 .active {
     &:hover {
-        background-color: $tileHover;
+        background-color: hsla(0, 95%, 95%, .33);
     } 
 }
 
 label {
     display: block;
+    cusor: pointer;
     width: 100%;
     height: 100%;
     &:before {

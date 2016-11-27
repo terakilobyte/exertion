@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 
-import GameBoard from '../components/GameBoard'
-import actions from '../modules'
+import TicTacToe from '../components/TicTacToe.js'
+import { actions } from '../modules'
 
-const mapStateToProps = (state) => ({ tictactoe: state.tictactoe })
+const mapStateToProps = ({tictactoe}) => ({ ...tictactoe })
 
-export default connect(mapStateToProps, actions)(GameBoard)
+export default connect(mapStateToProps, actions)(TicTacToe)

@@ -53,7 +53,7 @@ module.exports = {
         include: path.join(__dirname, 'web/static/js/')
       }, {
         test: /\.scss$/,
-        loader: extractSass.extract(['css', 'sass'])
+        loaders: ['style-loader', 'css-loader', 'sass-loader']
       }, {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/font-woff'
       }, {

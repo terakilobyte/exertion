@@ -1,24 +1,18 @@
 import React from 'react'
 import '../styles/TicTacToe.scss'
-import { connect } from 'react-redux'
-import { actions } from '../modules'
-
 import GameBoard from '../components/GameBoard'
-
 import throttle from 'lodash.throttle'
 
 class TicTacToe extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      gameKey: Date.now(),
-      playerSigil: this.props.playerSigil
+      gameKey: Date.now()
     }
     this.handleReset = this.handleReset.bind(this)
     this.firstReset = this.firstReset.bind(this)
-    this.handleUserClickThrottled = throttle(this.handleUserClick, 5000)
-    this.throttledComputerMove = throttle(this.computerMove, 5000)
-    this.handleUserClick = this.handleUserClick.bind(this)
+    this.handleUserClickThrottled = throttle(this.handleUserClick.bind(this), 5000)
+    this.throttledComputerMove = throttle(this.computerMove.bind(this), 5000)
   }
 
   componentWillReceiveProps (propObj) {
@@ -41,10 +35,9 @@ class TicTacToe extends React.Component {
     this.props.computerMove()
   }
 
-  handleUserClick (fun) {
-    console.log('clicked')
+  handleUserClick (tileClick) {
     if (!this.props.winner) {
-      fun()
+      tileClick()
       this.throttledComputerMove.cancel()
     }
   }
@@ -103,12 +96,17 @@ class TicTacToe extends React.Component {
     } else {
       return (
         <div key={this.state.gameKey}>
-          <h1 className='text-center'>Tic-Tac-Toe</h1>
-          <h3 className='text-center'>You can't win</h3>
-          <hr />
-          <GameBoard key={this.state.gameKey}
-            tileClick={this.handleUserClick} />
-          <hr />
+          <h3 className='text-center'>{this.props.motivationalMessage}</h3>
+          <GameBoard className='game-board'
+            key={this.state.gameKey}
+            playerTurn={this.props.playerTurn}
+            computerMove={this.props.computerMove}
+            board={this.props.board}
+            playerMove={this.props.playerMove}
+            playerSigil={this.props.playerSigil}
+            computerSigil={this.props.computerSigil}
+            winner={this.props.winner}
+            tileClick={this.handleUserClickThrottled} />
           {notifier}
         </div>
       )
@@ -119,20 +117,14 @@ class TicTacToe extends React.Component {
 TicTacToe.propTypes = {
   playerTurn: React.PropTypes.bool,
   computerMove: React.PropTypes.func.isRequired,
-  winner: React.PropTypes.bool,
+  winner: React.PropTypes.any.isRequired,
   resetGame: React.PropTypes.func.isRequired,
   playerMove: React.PropTypes.func.isRequired,
   playerSigil: React.PropTypes.string,
-  init: React.PropTypes.func.isRequired
+  init: React.PropTypes.func.isRequired,
+  board: React.PropTypes.array.isRequired,
+  computerSigil: React.PropTypes.string.isRequired,
+  motivationalMessage: React.PropTypes.string.isRequired
 }
 
-const mapStateToProps = (state) => {
-  return {
-    playerTurn: state.tictactoe.playerTurn,
-    winner: state.tictactoe.winner,
-    playerSigil: state.tictactoe.playerSigil,
-    computerSigil: state.tictactoe.computerSigil
-  }
-}
-
-export default connect(mapStateToProps, actions)(TicTacToe)
+export default TicTacToe

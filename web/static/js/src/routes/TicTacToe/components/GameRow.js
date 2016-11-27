@@ -20,6 +20,13 @@ export const GameRow = (props) => {
       <GameTile column={columns[key]}
         key={key}
         row={rows[props.row]}
+        playerTurn={props.playerTurn}
+        computerMove={props.computerMove}
+        board={props.board}
+        playerMove={props.playerMove}
+        playerSigil={props.playerSigil}
+        computerSigil={props.computerSigil}
+        winner={props.winner}
         tileClick={props.tileClick} />
     )
   })
@@ -32,8 +39,14 @@ export const GameRow = (props) => {
 }
 
 GameRow.propTypes = {
+  row: React.PropTypes.string.isRequired,
   tileClick: React.PropTypes.func.isRequired,
-  row: React.PropTypes.string.isRequired
+  playerMove: React.PropTypes.func.isRequired,
+  board: React.PropTypes.array.isRequired,
+  playerTurn: React.PropTypes.bool,
+  playerSigil: React.PropTypes.string,
+  computerSigil: React.PropTypes.string,
+  winner: React.PropTypes.any.isRequired
 }
 
 export default GameRow
