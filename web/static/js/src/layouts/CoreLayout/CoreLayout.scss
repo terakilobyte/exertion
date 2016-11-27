@@ -9,13 +9,14 @@
 }
 
 .center-flex {
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-  margin: 0 auto;
-  align-items: center;
-  background-image: url(/images/squeeze_blur.png);
-  background-size: cover;
-  text-align: center;
-  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    margin: 0 auto;
+    align-items: center;
+    background: url(http://localhost:4000/images/squeeze_blur.png);
+    background-size: cover;
+    text-align: center;
+    overflow: hidden;
 }
+

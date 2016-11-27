@@ -1,12 +1,13 @@
 import React from 'react'
+import '../styles/Counter.scss'
 
 export const Counter = (props) => (
   <div>
     <h2>Sum: {props.sum}</h2>
-    <button onClick={props.add}>Add 1</button>
-    <button onClick={props.sub}>Subtract 1</button>
-    <button onClick={props.asyncAdd}>Async add 1</button>
-    <button onClick={props.asyncSub}>Async sub 1</button>
+    <button className='counter' onClick={props.add}>Add 1</button>
+    <button className='counter' onClick={props.sub}>Subtract 1</button>
+    <button className='counter' onClick={props.asyncAdd}>Async add 1</button>
+    <button className='counter' onClick={props.asyncSub}>Async sub 1</button>
   </div>
 )
 

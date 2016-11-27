@@ -7,7 +7,7 @@ const Navigation = () => (
     <ul className='left'>
       <li>
         <h1>
-          <Link to='/'>
+          <Link to='/' className='website-name'>
             Exertion
           </Link>
         </h1>
@@ -15,7 +15,15 @@ const Navigation = () => (
     </ul>
     <ul className='right'>
       <li className='hover-effect'>About</li>
-      <li className='hover-effect'>Account</li>
+      <li className='hover-effect'>
+        <a href='https://github.com/terakilobyte'>GitHub</a>
+      </li>
+      <li className='hover-effect'>
+        <a href='https://twitter.com/terakilobyte'>Twitter</a>
+      </li>
+      <li className='hover-effect'>
+        <a href='https://blog.exertion.io'>Blog</a>
+      </li>
     </ul>
   </div>
 )

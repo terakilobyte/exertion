@@ -1,6 +1,13 @@
 var express = require('express')
 var webpack = require('webpack')
 var config = require('./webpack.config.js')
+var cssConfig = require('./webpack.makeGlobalCSS.js')
+var gulp = require('gulp')
+require('./Gulpfile.js')
+
+webpack(cssConfig)
+
+gulp.start('sassy')
 
 var compiler = webpack(config)
 var app = express()

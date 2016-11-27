@@ -1,3 +1,4 @@
+@import 'application';
 .nav {
   height: 75px;
   width: 100vw;
@@ -41,4 +42,8 @@
         width: 150px;
       }
     }
+}
+
+.website-name {
+    color: $rose
 }
