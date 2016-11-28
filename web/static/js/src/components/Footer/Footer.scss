@@ -1,0 +1,34 @@
+@import 'application.scss';
+
+.root {
+    background: $darksalmon;
+    color: $shadow;
+}
+
+.footerContainer {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: var(--max-content-width);
+    text-align: center;
+}
+
+.spacer {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.text,
+.footerLink {
+    padding: 2px 5px;
+    font-size: 1em;
+    color: $primary-text-color;
+}
+
+.footerLink,
+.footerLink:active,
+.footerLink:visited {
+    text-decoration: none;
+}
+
+.footerLink:hover {
+    color: rgba(255, 255, 255, 1);
+}
