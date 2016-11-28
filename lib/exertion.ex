@@ -13,6 +13,7 @@ defmodule Exertion do
       # Start the endpoint when the application starts
       supervisor(Exertion.Endpoint, []),
       # Start your own worker by calling: Exertion.Worker.start_link(arg1, arg2, arg3)
+      worker(Exertion.Counter, [])
       # worker(Exertion.Worker, [arg1, arg2, arg3]),
     ]
 

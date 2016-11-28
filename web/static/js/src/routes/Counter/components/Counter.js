@@ -3,7 +3,14 @@ import '../styles/Counter.scss'
 
 export const Counter = (props) => (
   <div>
-    <h2>Sum: {props.sum}</h2>
+    <h2>This is the local redux store</h2>
+    <h2>Redux: {props.sum}</h2>
+    <button className='counter' onClick={props.add}>Add 1</button>
+    <button className='counter' onClick={props.sub}>Subtract 1</button>
+    <button className='counter' onClick={props.asyncAdd}>Async add 1</button>
+    <button className='counter' onClick={props.asyncSub}>Async sub 1</button>
+    <h2>And this is the server state</h2>
+    <h2>Server: {props.sum}</h2>
     <button className='counter' onClick={props.add}>Add 1</button>
     <button className='counter' onClick={props.sub}>Subtract 1</button>
     <button className='counter' onClick={props.asyncAdd}>Async add 1</button>
