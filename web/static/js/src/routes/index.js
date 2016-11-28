@@ -10,6 +10,7 @@ export const createRoutes = (store) => {
     component: CoreLayout,
     indexRoute: Home,
     childRoutes: [
+      require('./About').default,
       require('./Hire').default,
       require('./Counter').default(store),
       require('./TicTacToe').default(store),

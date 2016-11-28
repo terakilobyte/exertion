@@ -1,5 +1,6 @@
 import React from 'react'
 import Navigation from '../../components/Navigation'
+import Footer from '../../components/Footer'
 import './CoreLayout.scss'
 
 export const CoreLayout = ({ children }) => (
@@ -8,6 +9,7 @@ export const CoreLayout = ({ children }) => (
     <div className='center-flex'>
       {children}
     </div>
+    <Footer />
   </div>
 )
 

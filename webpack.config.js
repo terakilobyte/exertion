@@ -168,8 +168,13 @@ webpackConfig.module.loaders.push({
     'style',
     BASE_CSS_LOADER,
     'postcss',
-    'sass'
+    'sass-loader'
   ]
+  /* loaders: [
+   *   'style-loader',
+   *   'css-loader',
+   *   'sass-loader'
+   * ]*/
 })
 
 webpackConfig.module.loaders.push({
@@ -182,23 +187,22 @@ webpackConfig.module.loaders.push({
   ]
 })
 
-/*
- * webpackConfig.postcss = [
- *   cssnano({
- *     autoprefixer : {
- *       add      : true,
- *       remove   : true,
- *       browsers : ['last 2 versions']
- *     },
- *     discardComments : {
- *       removeAll : true
- *     },
- *     discardUnused : false,
- *     mergeIdents   : false,
- *     reduceIdents  : false,
- *     safe          : true,
- *     sourcemap     : true
- *   })
- * ]*/
+webpackConfig.postcss = [
+  cssnano({
+    autoprefixer: {
+      add: true,
+      remove: true,
+      browsers: ['last 2 versions']
+    },
+    discardComments: {
+      removeAll: true
+    },
+    discardUnused: false,
+    mergeIdents: false,
+    reduceIdents: false,
+    safe: true,
+    sourcemap: true
+  })
+]
 
 module.exports = webpackConfig

@@ -14,7 +14,9 @@ const Navigation = () => (
       </li>
     </ul>
     <ul className='right'>
-      <li className='hover-effect'>About</li>
+      <li className='hover-effect'>
+        <Link to='about'>About</Link>
+      </li>
       <li className='hover-effect'>
         <a href='https://github.com/terakilobyte'>GitHub</a>
       </li>
