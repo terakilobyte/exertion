@@ -1,15 +1,17 @@
-@import 'application';
+@import 'application.scss';
 
 $phi: 1.6180339887498948482;
 
 .aboutBackground {
-    height: 45vw;
-    width: 45vw * $phi;
     background-color: hsla(0, 95%, 95%, .33);
-    text-align: center;
-    line-height: 10vw;
+    text-align: left;
     border-radius: 15px;
     box-shadow: 3px 3px 14px 0px hsla(0, 0%, 0%, .75);
     margin: 10vw 5vw;
     display: inline-block;
+    padding: 5vh 3vh;
+}
+
+.aboutLink {
+    color: $rose;
 }
