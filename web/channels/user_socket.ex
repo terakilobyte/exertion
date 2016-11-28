@@ -3,6 +3,7 @@ defmodule Exertion.UserSocket do
 
   ## Channels
   # channel "room:*", Exertion.RoomChannel
+  channel "counter", Exertion.CounterChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
-import { add, sub, asyncAdd, asyncSub } from '../../../actions'
-
 import Counter from '../components/Counter'
+import {actions} from '../modules'
+import {channelAdd, channelSub} from '../modules/ws'
 
-const mapStateToProps = (state) => {
-  return { sum: state.sum }
+const mapStateToProps = ({counter}) => {
+  return {...counter}
 }
-export default connect(mapStateToProps, {add, sub, asyncAdd, asyncSub})(Counter)
+export default connect(mapStateToProps, { ...actions, channelAdd, channelSub })(Counter)

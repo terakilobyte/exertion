@@ -2,7 +2,9 @@ defmodule Exertion.Counter do
 
   use GenServer
 
-  @initial_state 0
+  @initial_state %{
+    "total" => 0
+  }
 
   def start_link() do
     GenServer.start_link(__MODULE__, [], name: __MODULE__)
@@ -17,12 +19,14 @@ defmodule Exertion.Counter do
   end
 
   def handle_call(:add, _, state) do
-    new_state = state + 1
+    new_state = %{state | "total" => state["total"] + 1}
+    Phoenix.PubSub.broadcast(Exertion.PubSub, "counter", %{event: "add"})
     {:reply, {:ok, new_state}, new_state}
   end
 
   def handle_call(:sub, _, state) do
-    new_state = state - 1
+    new_state = %{state | "total" => state["total"] - 1}
+    Phoenix.PubSub.broadcast(Exertion.PubSub, "counter", %{event: "sub"})
     {:reply, {:ok, new_state}, new_state}
   end
 
