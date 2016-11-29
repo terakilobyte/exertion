@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router'
 import PresentationCard from '../../components/PresentationCard'
-import styles from './Home.scss'
+import './Projects.scss'
 
-const Home = (props) => (
-  <div id='centerHomeID' className={styles.centerHome}>
+const Projects = (props) => (
+  <div id='centerHomeID' className='centerHome'>
     <h3>Trying to make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
     <Link className='presentation-link' to='tictactoe'>
       <PresentationCard content='Tic-Tac-Toe' />
@@ -15,6 +15,6 @@ const Home = (props) => (
   </div>
 )
 
-Home.displayName = 'Home'
+Projects.displayName = 'Projects'
 
-export default Home
+export default Projects
