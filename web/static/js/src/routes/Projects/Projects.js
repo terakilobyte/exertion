@@ -5,13 +5,15 @@ import './Projects.scss'
 
 const Projects = (props) => (
   <div id='centerHomeID' className='centerHome'>
-    <h3>Trying to make the juice worth the <span className='squeeze'><em>squeeze</em></span></h3>
     <Link className='presentation-link' to='tictactoe'>
       <PresentationCard content='Tic-Tac-Toe' />
     </Link>
     <Link className='presentation-link' to='counter'>
       <PresentationCard content='Counter' />
     </Link>
+    <a href='https://www.freecodecamp.com'>
+      <PresentationCard content='freeCodeCamp' faClass='fa fa-free-code-camp' />
+    </a>
   </div>
 )
 

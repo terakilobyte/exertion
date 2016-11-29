@@ -15,7 +15,7 @@ const About = () => {
           Here&nbsp;
         </a>
         is a brief resume.
-        <a className='aboutLink' href='mailto:terakilobyte@exertion.io'> &nbsp;Get in touch</a>
+        <a className='aboutLink' href='mailto:terakilobyte@exertion.io'> &nbsp;Get in touch,</a>
       &nbsp;I'd love to build things for you.</p>
       <p><em><strong>Pssst..</strong></em>&nbsp;Did you like something you saw and want to lift it? The source code for everything on this site can be found
         <a className='aboutLink' href='https://github.com/terakilobyte/exertion'>

@@ -4,21 +4,3 @@ $font-headers: 'Roboto';
   margin: 35vh auto;
 }
 
-.squeeze {
-  animation: squeeze 600ms ease-in 500ms forwards;
-
-  @keyframes squeeze {
-    0% {
-      letter-spacing: inherit;
-    }
-    30% {
-        letter-spacing: -0.08em;
-    }
-    60% {
-        letter-spacing: -0.08em;
-    }
-    100% {
-      letter-spacing: inherit;
-    }
-  }
-}

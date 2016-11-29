@@ -13,6 +13,8 @@ const Footer = () => (
       <span className='spacer'>·</span>
       <Link className='footerLink' to='/about'>About Me</Link>
       <span className='spacer'>·</span>
+      <Link className='footerLink' to='/projects'>Projects</Link>
+      <span className='spacer'>·</span>
       <a className='footerLink' href='mailto:terakilobyte@exertion.io'>
         Contact
       </a>

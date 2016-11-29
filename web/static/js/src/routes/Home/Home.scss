@@ -1,0 +1,21 @@
+.squeeze {
+    animation: squeeze 600ms ease-in 500ms forwards;
+
+    @keyframes squeeze {
+        0% {
+            letter-spacing: inherit;
+        }
+        30% {
+            letter-spacing: -0.15em;
+        }
+        50% {
+            letter-spacing: 0.04em;
+        }
+        70% {
+            letter-spacing: -0.04em;
+        }
+        100% {
+            letter-spacing: inherit;
+        }
+    }
+}

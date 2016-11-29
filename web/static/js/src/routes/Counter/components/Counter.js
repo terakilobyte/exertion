@@ -7,8 +7,6 @@ export const Counter = (props) => (
     <h2>Redux: {props.reduxSum}</h2>
     <button className='counter' onClick={props.add}>Add 1</button>
     <button className='counter' onClick={props.sub}>Subtract 1</button>
-    <button className='counter' onClick={props.asyncAdd}>Async add 1</button>
-    <button className='counter' onClick={props.asyncSub}>Async sub 1</button>
     <h2>This is the server state (shared by all visitors)</h2>
     <h2>Server: {props.serverSum}</h2>
     <button className='counter' onClick={props.channelAdd}>Add 1</button>
@@ -19,8 +17,6 @@ export const Counter = (props) => (
 Counter.propTypes = {
   reduxSum: React.PropTypes.number.isRequired,
   serverSum: React.PropTypes.number.isRequired,
-  asyncAdd: React.PropTypes.func.isRequired,
-  asyncSub: React.PropTypes.func.isRequired,
   add: React.PropTypes.func.isRequired,
   sub: React.PropTypes.func.isRequired,
   channelAdd: React.PropTypes.func.isRequired,
