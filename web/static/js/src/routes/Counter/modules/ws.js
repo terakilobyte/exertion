@@ -7,7 +7,6 @@ import { INIT,
          CHANNELADD,
          CHANNELSUB
 } from './index'
-import Rx from 'rxjs/Rx'
 
 const socketHandlers = (name, channel, dispatch) => {
   channel.on('init', msg => {
@@ -44,6 +43,7 @@ const socketConnect = () => {
 const channelJoin = (name, alias = null) => {
   alias = alias === null ? name : alias
   return (dispatch, getState) => {
+    console.log(getState())
     const ws = getState().counter.socket
     const channel = ws.channel(name)
     channel.join().receive('ok', () => {

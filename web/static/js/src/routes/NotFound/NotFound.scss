@@ -1,0 +1,17 @@
+.fowerOhfower {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    color: black;
+    margin: 0 auto;
+    clip-path: circle(10px, 10px, 10px);
+    mask: url(#mask);
+    background-color: black;
+}
+.clipCircle {
+    clip-path: circle(35px at center);
+    z-index: 2;
+}

@@ -10,7 +10,9 @@ export const SOCKET_CONNECTED = 'SOCKET_CONNECTED'
 export const CHANNEL_JOINED = 'CHANNEL_JOINED'
 export const INIT = 'INIT'
 
-export const add = () => ({ type: ADD })
+export const add = () => {
+  return ({ type: ADD })
+}
 export const sub = () => ({ type: SUB })
 export const asyncAdd = () => ({type: ASYNCADD})
 export const asyncSub = () => ({type: ASYNCSUB})
