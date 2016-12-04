@@ -7,7 +7,7 @@ require('./Gulpfile.js')
 
 webpack(cssConfig)
 
-gulp.start('sassy')
+gulp.start('default')
 
 var compiler = webpack(config)
 var app = express()

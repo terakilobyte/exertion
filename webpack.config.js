@@ -3,12 +3,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const extractSass = new ExtractTextPlugin('css/app.css')
 const webpack = require('webpack')
-const env = process.env.MIX_ENV || 'dev'
+const env = process.env.MIX_ENV || process.env.NODE_ENV || 'dev'
 const prod = env || 'dev'
 const cssnano = require('cssnano')
 
 process.env['SASS_PATH'] = path.resolve(__dirname) + 'web/static/css'
-console.log('we are in ' + prod + 'mode')
+console.log('we are in ' + prod + ' mode')
 
 const babelQuery = {
   cacheDirectory: true,
@@ -32,6 +32,13 @@ const entry = ['./web/static/js/app.js']
 const hot = 'webpack-hot-middleware/client?path=' + publicPath + '__webpack_hmr'
 if (prod === 'dev') {
   entry.unshift(hot)
+}
+
+if (prod === 'prod') {
+  plugins.push(
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.DedupePlugin()
+  )
 }
 
 if (env === 'dev') {

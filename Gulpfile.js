@@ -5,8 +5,6 @@ const autoprefixer = require('gulp-autoprefixer')
 const path = require('path')
 const gutil = require('gulp-util')
 const webpack = require('webpack')
-const WebpackDevServer = require('webpack-dev-server')
-const process = require('process')
 
 const input = path.join(__dirname, './web/static/css/application.scss')
 
@@ -17,7 +15,7 @@ const sassOptions = {
   outputStyle: 'expanded'
 }
 
-gulp.task('sassy', ['sass', 'watch'])
+gulp.task('default', ['sass', 'webpack:build-dev', 'watch'])
 
 gulp.task('sass', function (cb) {
   gulp
@@ -54,33 +52,4 @@ gulp.task('webpack:build-dev', (cb) => {
     }))
     cb()
   })
-})
-/* 
- * gulp.task('webpack-dev-server', cb => {
- *   let myConfig = Object.create(require('./webpack.config.js'))
- *   myConfig.debug = true
- * 
- *   new WebpackDevServer(webpack(myConfig), {
- *     publicPath: myConfig.output.publicPath,
- *     stats: {
- *       colors: true,
- *       chunks: false
- *     }
- *   }).listen(4001, 'localhost', err => {
- *     if (err) throw new gutil.PluginError('webpack-dev-server', err)
- *     gutil.log('[webpack-dev-server]', 'localhost:4001')
- *     process.on('SIGINT', () => {
- *       console.log('got sigint, shutting down')
- *       process.exit()
- *     })
- *   })
- * })*/
-/* 
- * process.on('SIGINT', () => {
- *   console.log('shutting things down')
- *   process.exit()
- * })
- * */
-process.on('exit', (code) => {
-  console.log('got an exit with code ', code)
 })
