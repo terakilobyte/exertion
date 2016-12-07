@@ -8,7 +8,7 @@ const prod = env || 'dev'
 const cssnano = require('cssnano')
 
 process.env['SASS_PATH'] = path.resolve(__dirname) + 'web/static/css'
-console.log('we are in ' + prod + ' mode')
+console.log(`webpack building in ${prod} mode`)
 
 const babelQuery = {
   cacheDirectory: true,
@@ -42,7 +42,6 @@ if (prod === 'prod') {
 }
 
 if (env === 'dev') {
-  console.log('webpack building in dev mode')
   plugins.push(new webpack.HotModuleReplacementPlugin())
 }
 

@@ -25,8 +25,6 @@ defmodule Exertion.CounterChannel do
       _ ->
         IO.puts "some shit went down"
     end
-    IO.puts "New genserver state?"
-    IO.inspect Exertion.Counter.state()
     {:noreply, socket}
   end
 end

@@ -15,6 +15,7 @@ export const createRoutes = (store) => {
       require('./Hire').default,
       require('./Counter').default(store),
       require('./TicTacToe').default(store),
+      require('./Percolation').default(store),
       require('./NotFound').default
     ]
   })

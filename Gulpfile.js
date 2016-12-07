@@ -36,7 +36,6 @@ gulp.task('watch', function (cb) {
     // When there is a change,
     // log a message in the console
     .on('change', function (event) {
-      console.log('File ' + event.path + ' was ' + event.type + ', running tasks...')
     })
   cb()
 })

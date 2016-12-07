@@ -1,0 +1,23 @@
+@import 'application';
+
+.grid-square {
+    background-color: black;
+    border: 1px solid $titanwhite;
+    width: 5vw;
+    height: 5vw;
+    cursor: pointer;
+    transition: background-color 200 ease-in-out;
+}
+
+.grid-row {
+    display: flex;
+    flex-direction: horizontal;
+}
+
+.clicked {
+    background-color: $shadow;
+}
+
+.full {
+    background-color: blue;
+}
