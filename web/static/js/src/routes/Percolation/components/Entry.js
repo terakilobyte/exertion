@@ -22,7 +22,7 @@ class Entry extends React.Component {
         </label>
         <input id='select-gridSize' type='text' ref='input' />
         &nbsp;&nbsp;
-        <button onClick={this.handleClick}> Sumbit </button>
+        <button onClick={this.handleClick}> Submit </button>
       </div>
       )
     : (

@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import '../styles/Percolation.scss'
 import Square from './Square'
 import { actions } from '../modules/reducer'
