@@ -4,25 +4,18 @@ class Square extends React.Component {
 
   constructor (props) {
     super(props)
-    this.state = {
-      clicked: false
-    }
     this.handleClick = this.handleClick.bind(this)
   }
 
   handleClick (event) {
-    if (this.state.clicked) {
-      event.target.classList.remove('clicked', 'full')
-    } else {
-      event.target.classList.add('clicked')
-    }
-    this.setState({clicked: !this.state.clicked})
-    console.log(`grid ${this.props.row}, ${this.props.col}`)
+    this.props.click(this.props.row, this.props.col)
   }
 
   render () {
+    let clicked = this.props.clicked ? 'clicked' : ''
+    let full = this.props.clicked && this.props.full ? 'full' : ''
     return (
-      <div className='grid-square'
+      <div className={`grid-square ${clicked} ${full}`}
         onClick={this.handleClick}
       />
     )
@@ -31,7 +24,10 @@ class Square extends React.Component {
 
 Square.propTypes = {
   row: React.PropTypes.number.isRequired,
-  col: React.PropTypes.number.isRequired
+  col: React.PropTypes.number.isRequired,
+  click: React.PropTypes.func.isRequired,
+  clicked: React.PropTypes.bool.isRequired,
+  full: React.PropTypes.bool.isRequired
 }
 
 export default Square

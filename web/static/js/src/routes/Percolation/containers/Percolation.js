@@ -1,3 +1,11 @@
-import Percolation from '../components/Percolation'
+import { connect } from 'react-redux'
+import { actions } from '../modules/reducer'
+import Entry from '../components/Entry'
 
-export default Percolation
+const mapStateToProps = ({percolation}) => {
+  return {
+    size: percolation.size
+  }
+}
+
+export default connect(mapStateToProps, actions)(Entry)

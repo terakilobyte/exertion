@@ -3,16 +3,17 @@ function QuickUnion (size) {
   this.parent = new Array(size)
   this.size = new Array(size)
 
+  console.log('init parent with size', size)
   for (let i = 0; i < size; i++) {
-    parent[i] = i
-    size[i] = i
+    this.parent[i] = i
+    this.size[i] = 1
   }
 }
 
 QuickUnion.prototype.find = function (elem) {
   if (this.validate(elem)) {
     while (elem !== this.parent[elem]) {
-      elem = parent[elem]
+      elem = this.parent[elem]
     }
     return elem
   }

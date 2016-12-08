@@ -14,6 +14,9 @@ const Projects = (props) => (
     <a href='https://www.freecodecamp.com'>
       <PresentationCard content='freeCodeCamp' faClass='fa fa-free-code-camp' />
     </a>
+    <Link className='presentation-link' to='percolation'>
+      <PresentationCard content='Percolation' />
+    </Link>
   </div>
 )
 
