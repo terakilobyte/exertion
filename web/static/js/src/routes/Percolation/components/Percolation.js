@@ -54,7 +54,7 @@ class Percolation extends React.Component {
                      <div />
                    )
     return (
-      <div>
+      <div className='grid-container'>
         {grid}
         {percolates}
       </div>

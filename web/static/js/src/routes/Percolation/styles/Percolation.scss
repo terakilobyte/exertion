@@ -3,15 +3,20 @@
 .grid-square {
     background-color: black;
     border: 1px solid $titanwhite;
-    width: 5vw;
-    height: 5vw;
+    width: 2em;
+    height: 2em;
     cursor: pointer;
     transition: background-color 200 ease-in-out;
 }
 
+.grid-container {
+    display: flex;
+    flex-direction: column;
+}
+
 .grid-row {
     display: flex;
-    flex-direction: horizontal;
+    flex-direction: row;
 }
 
 .clicked {
