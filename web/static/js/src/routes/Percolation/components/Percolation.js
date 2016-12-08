@@ -23,8 +23,14 @@ class Percolation extends React.Component {
     this.props.clickedTile(payload)
   }
 
+  getFull (key) {
+    while (this.props.percolation.full.parent[key] !== key) {
+      key = this.props.percolation.full.parent[key]
+    }
+    return key === this.props.percolation.full.parent[0] || false
+  }
+
   render () {
-    console.log(this.props.percolation)
     let grid = this.props.grid.map((row, rowIdx) => {
       return (
         <div className='grid-row' key={rowIdx}>
@@ -37,7 +43,7 @@ class Percolation extends React.Component {
                   col={colIdx + 1}
                   key={key}
                   clicked={this.props.open[key] || false}
-                  full={this.props.percolation.full.parent[key] === 0 || false}
+                  full={this.getFull(key)}
                 />
               )
             })
@@ -45,7 +51,6 @@ class Percolation extends React.Component {
         </div>
       )
     })
-    console.log(this.props.percolation.percolates())
     let percolates = this.props.percolation.percolates()
                    ? (
                      <h3>Percolates!</h3>
@@ -56,6 +61,8 @@ class Percolation extends React.Component {
     return (
       <div className='grid-container'>
         {grid}
+        <br />
+        <button onClick={this.props.reset}>Reset</button>
         {percolates}
       </div>
     )
@@ -67,7 +74,8 @@ Percolation.propTypes = {
   grid: React.PropTypes.array.isRequired,
   open: React.PropTypes.array.isRequired,
   size: React.PropTypes.number.isRequired,
-  percolation: React.PropTypes.object.isRequired
+  percolation: React.PropTypes.object.isRequired,
+  reset: React.PropTypes.func.isRequired
 }
 
 const mapStateToProps = ({percolation}) => {

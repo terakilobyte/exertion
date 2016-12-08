@@ -8,7 +8,7 @@ class Square extends React.Component {
   }
 
   handleClick (event) {
-    this.props.click(this.props.row, this.props.col)
+    !this.props.clicked && this.props.click(this.props.row, this.props.col)
   }
 
   render () {

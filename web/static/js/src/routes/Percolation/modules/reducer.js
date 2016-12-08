@@ -1,15 +1,13 @@
 import Percolation from './percolation'
 
 const TILE_CLICK = 'TILE_CLICK'
-const SET_FULL = 'SET_FULL'
-const SET_PERCOLATES = 'SET_PERCOLATES'
 const INITIALIZE = 'INITIALIZE'
+const RESET = 'RESET'
 
 export const constants = {
   TILE_CLICK,
-  SET_FULL,
-  SET_PERCOLATES,
-  INITIALIZE
+  INITIALIZE,
+  RESET
 }
 
 const clickedTile = ({percolation, grid, tile}) => {
@@ -32,6 +30,10 @@ const clickedTile = ({percolation, grid, tile}) => {
   }
 }
 
+const reset = () => ({
+  type: RESET
+})
+
 const initialize = ({size}) => {
   let percolation = new Percolation(size)
   let grid = Array.from(new Array(size)).map((row, rowIdx) => {
@@ -51,21 +53,10 @@ const initialize = ({size}) => {
   }
 }
 
-const setFull = (payload) => ({
-  type: SET_FULL,
-  payload
-})
-
-const setPercolates = (payload) => ({
-  type: SET_PERCOLATES,
-  payload
-})
-
 export const actions = {
   clickedTile,
-  setFull,
-  setPercolates,
-  initialize
+  initialize,
+  reset
 }
 
 let initialState = {
@@ -88,6 +79,9 @@ export const reducer = (state = initialState, action) => {
         ...state,
         ...action.payload
       }
+    case RESET:
+      return initialState
+
     default:
       return state
   }

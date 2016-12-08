@@ -3,7 +3,6 @@ function QuickUnion (size) {
   this.parent = new Array(size)
   this.size = new Array(size)
 
-  console.log('init parent with size', size)
   for (let i = 0; i < size; i++) {
     this.parent[i] = i
     this.size[i] = 1
