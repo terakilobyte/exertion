@@ -3,12 +3,12 @@ import '../styles/Counter.scss'
 
 export const Counter = (props) => (
   <div>
-    <h2>This is the local(only you)</h2>
-    <h2>Redux: {props.reduxSum}</h2>
+    <h4>This is the local(only you)</h4>
+    <p>Redux: {props.reduxSum}</p>
     <button className='counter' onClick={props.add}>Add 1</button>
     <button className='counter' onClick={props.sub}>Subtract 1</button>
-    <h2>This is the server(shared by all visitors)</h2>
-    <h2>Server: {props.serverSum}</h2>
+    <h4>This is the server(shared by all visitors)</h4>
+    <p>Server: {props.serverSum}</p>
     <button className='counter' onClick={props.channelAdd}>Add 1</button>
     <button className='counter' onClick={props.channelSub}>Subtract 1</button>
   </div>
