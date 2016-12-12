@@ -4,16 +4,10 @@ import './Navigation.scss'
 
 const Navigation = () => (
   <div className='nav'>
-    <ul className='left'>
-      <li>
-        <h1>
-          <Link to='/' className='website-name'>
-            Exertion
-          </Link>
-        </h1>
-      </li>
-    </ul>
     <ul className='right'>
+      <li className='only-small hover-effect'>
+        <Link to='/'>Home</Link>
+      </li>
       <li className='hover-effect'>
         <a href='https://github.com/terakilobyte'>GitHub</a>
       </li>

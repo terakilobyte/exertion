@@ -3,8 +3,18 @@
 .grid-square {
     background-color: black;
     border: 1px solid $titanwhite;
-    width: 2em;
-    height: 2em;
+    @media (max-width: 570px) {
+        width: 3vw;
+        height: 3vw;
+    }
+    @media (min-width: 571px) {
+        width: 2vw;
+        height: 2vw;
+    }
+    @media (min-width: 800px) {
+        max-width: 17px;
+        max-height: 17px;
+    }
     cursor: pointer;
     transition: background-color 200 ease-in-out;
 }
@@ -26,4 +36,16 @@
 .full {
     background-color: blue;
     cursor: default;
+}
+
+.percolation {
+    margin-top: 7vw;
+}
+
+.wrap {
+    margin: 0 10vw;
+}
+
+.info-link {
+    color: darken($rose, 20%);
 }

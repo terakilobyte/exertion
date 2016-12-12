@@ -1,37 +1,28 @@
 @import 'application.scss';
 .nav {
-  height: 75px;
-  width: 100vw;
   position: fixed;
-  z-index: 1;
-  margin-bottom: 1vw;
-  display: inline-flex;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  vertical-align: center;
+  align-items: center;
+  margin-top: 5vh;
 
   & > ul {
-    height: inherit;
-    list-style: none;
-    line-height: 110px;
-    display: flex;
-    width: 45%;
-
-    & > .right {
-      justify-content: flex-end;
-    }
-
-    & > .left {
-      justify-content: flex-start;
-    }
+        height: inherit;
+        width: 75vw;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
 
     & > li.hover-effect {
-      padding: 0 10px;
       cursor: pointer;
       transition: all 400ms ease-in-out;
-      width: 85px;
       color: white;
       font-weight: bolder;
+      text-align: center;
 
       &:hover {
-        background: darken($color: hsla(0, 95%, 95%, .33), $amount: 10%);
         color: black;
         font-weight: bolder;
       }
@@ -43,6 +34,7 @@
       }
     }
 }
+
 
 .website-name {
     color: $rose

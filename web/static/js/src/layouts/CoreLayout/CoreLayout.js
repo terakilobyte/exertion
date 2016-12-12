@@ -5,7 +5,9 @@ import './CoreLayout.scss'
 
 export const CoreLayout = ({ children }) => (
   <div>
-    <Navigation />
+    <div className='navigation'>
+      <Navigation />
+    </div>
     <div className='center-flex'>
       {children}
     </div>
